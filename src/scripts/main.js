@@ -5,13 +5,8 @@ const wall = document.querySelector('.wall');
 
 document.addEventListener('click', (e) => {
   const wallPosition = wall.getBoundingClientRect();
-  const computedStyle = window.getComputedStyle(wall);
-  const borderTop = parseInt(computedStyle.borderTopWidth, 10);
-  const borderLeft = parseInt(computedStyle.borderLeftWidth, 10);
-  let topPosition =
-    e.clientY - wallPosition.top - borderTop - spider.clientHeight / 2;
-  let leftPosition =
-    e.clientX - wallPosition.left - borderLeft - spider.clientWidth / 2;
+  let topPosition = e.clientY - wallPosition.top - spider.clientHeight / 2;
+  let leftPosition = e.clientX - wallPosition.left - spider.clientWidth / 2;
 
   leftPosition = Math.max(
     0,
